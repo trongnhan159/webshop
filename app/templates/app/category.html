@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block search %}
+
+    <br>
+     <div class="row" style="width:100%">
+       {% for products in products %}
+        <div class="col-lg-3">
+          <img class="thumbnail" src="{{products.ImageURL}}">
+          <div class="box-element product">
+            <h6><strong>{{products.name}}</strong></h6>
+            <hr>
+
+            <button data-product={{product.id}} data-action ="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+            <a class="btn btn-outline-success" href="#">Views</a>
+            <h6 style="display: inline-block; float: right"><strong>${{products.price | floatformat:2}}</strong></h6>
+          </div>
+        </div>
+       {% endfor %}
+     </div>
+    {% endblock search %}
+</body>
+</html>
