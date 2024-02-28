@@ -6,7 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
-# Create your views here.
 
 
 def detail(request):
@@ -54,7 +53,7 @@ def search(request):
         cartItems = order['get_cart_items']
     products = Product.objects.all()
     context = {'products': products, 'cartItems':cartItems}
-    return render(request,'app/search.html',{"searched":searched, "keys":keys,'products': products, 'cartItems':cartItems})
+    return render(request,'app/search.html',{"searched":searched, "keys":keys,'products': products, 'cartItems': cartItems})
 
 
 def register(request):
@@ -70,8 +69,8 @@ def register(request):
 
 
 def loginPage(request):
-    if  request.user.is_authenticated:
-        return redirect('home')
+    if request.user.is_authenticated:
+        return redirect('index')
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -90,7 +89,7 @@ def logoutPage(request):
     return redirect('login')
 
 
-def home(request):
+def index(request):
     if request.user.is_authenticated:
         customer = request.user
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -107,7 +106,7 @@ def home(request):
     categories = Category.objects.filter(is_sub=False)
     products = Product.objects.all()
     context = {'categories':categories,'products': products, 'cartItems':cartItems, "user_not_login": user_not_login, "user_login": user_login}
-    return render(request, 'app/home.html', context)
+    return render(request, 'app/index.html', context)
 
 
 def cart(request):
@@ -121,7 +120,7 @@ def cart(request):
         order = {'get_cart_items': 0, 'get_cart_total': 0}
         cartItems = order['get_cart_items']
     categories = Category.objects.filter(is_sub = False)
-    context = {'items': items, 'order': order, 'cartItems':cartItems,'categories':categories}
+    context = {'items': items, 'order': order, 'cartItems':cartItems, 'categories': categories}
     return render(request, 'app/cart.html', context)
 
 
@@ -160,3 +159,8 @@ def updateItem(request):
         orderItem.delete()
     return JsonResponse('added', safe=False)
 
+
+
+
+
+ 

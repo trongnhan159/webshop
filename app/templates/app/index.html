@@ -1,0 +1,170 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block banner_slider %}
+
+{% endblock banner_slider %}
+{% block main-content %}
+<!--
+ <div class="row" style="width:100%">
+   {% for products in products %}
+    <div class="col-lg-3">
+      <img class="thumbnail" src="{{products.ImageURL}}">
+      <div class="box-element product">
+        <h6><strong>{{products.name}}</strong></h6>
+        <hr>
+
+        <button data-product={{product.id}} data-action ="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+        <a class="btn btn-outline-success" href="{% url 'detail'%}?id={{product.id}}">Views</a>
+        <h6 style="display: inline-block; float: right"><strong>${{products.price | floatformat:2}}</strong></h6>
+      </div>
+    </div>
+   {% endfor %}
+ </div>
+-->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Categories Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3" style="width:100%">
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/laptop-theloai.jpg'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">179 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Laptop</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/dt-loai.png'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">139 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Samsung</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/ip-loai.png'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">115 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Iphone</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/sw-loai.png'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">68 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Smartwatch</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/tl-loai.png'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">39 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Tablet</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px; position: relative;">
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3" style="width: 100%; height: 200px;"> <!-- Điều chỉnh chiều cao nếu cần thiết -->
+                        <img class="img-fluid" src="{% static 'app/images/loai/pk-loai.png'%}" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                        <p class="text-right m-0" style="position: absolute; top: 0; right: 0; background-color: rgba(255, 255, 255, 0.5); padding: 5px;">68 Products</p>
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Phụ kiện</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Categories End -->
+
+   <!-- Products Start -->
+    <div class="container-fluid pt-5" >
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3" style="width:100%">
+            {% for product in products %}
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="thumbnail" src="{{product.ImageURL}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{product.title}}</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>${{product.price}}</h6><h6 class="text-muted ml-2"><del>${{product.price}}</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="{% url 'detail'%}?id={{product.id}}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" data-product={{product.id}} data-action ="add" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Products End -->
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Just Arrived</span></h2>
+        </div>
+        <div class="row px-xl-5 pb-3">
+            {% for product in products %}
+
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="thumbnail" src="{{product.ImageURL}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">{{product.title}}</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>${{product.price}}</h6><h6 class="text-muted ml-2"><del>${{product.price}}</del></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Products End -->
+<br>
+<br>
+
+{% endblock main-content %}
